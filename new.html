@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>M. Sai Krishna | Developer Portfolio</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<header>
+<h1>M. SAI KRISHNA</h1>
+<nav>
+<a href="#about">About</a>
+<a href="#skills">Skills</a>
+<a href="#education">Education</a>
+<a href="#projects">Projects</a>
+<a href="#contact">Contact</a>
+</nav>
+</header>
+
+<section class="hero">
+<div class="hero-text">
+<h2>Hello, I'm <span>M. Sai Krishna</span></h2>
+<div class="typing" id="typing"></div>
+<div class="btn-group">
+<a href="#projects" class="btn-primary">View Projects</a>
+<a href="saikrishna_resume.pdf" download class="btn-outline">Download Resume</a>
+</div>
+</div>
+<div class="hero-image">
+<img src="profile.jpeg" alt="Profile">
+</div>
+</section>
+
+<section id="about" class="fade">
+<h2 class="section-title">About Me</h2>
+<p>
+I am a Electronics & Communication Engineering student with a strong foundation in web development 
+and problem solving. I enjoy building responsive, user-focused applications that are both efficient
+ and scalable. My approach combines clean code practices, logical thinking, and continuous improvement.
+ I am actively working on real-world projects to strengthen my frontend and backend skills. 
+ My goal is to become a full-stack developer capable of delivering complete, production-ready solutions.
+</p>
+</section>
+
+<section id="skills" class="fade">
+<h2 class="section-title">Skills</h2>
+
+<div class="skills-bar">
+<span>HTML</span>
+<div class="progress"><div data-width="90%"></div></div>
+</div>
+
+<div class="skills-bar">
+<span>CSS</span>
+<div class="progress"><div data-width="85%"></div></div>
+</div>
+
+<div class="skills-bar">
+<span>JavaScript</span>
+<div class="progress"><div data-width="75%"></div></div>
+</div>
+
+<div class="skills-bar">
+<span>Python</span>
+<div class="progress"><div data-width="70%"></div></div>
+</div>
+</section>
+
+<section id="education"> 
+    <h2 class="section-title">Education</h2>
+     <div class="card">
+         <h3>B.Tech in Electronics & Communication Engineering</h3>
+          <p>2022 – 2026</p></div> 
+         <div class="card">
+          <h3>Senior Secondary (Intermediate)</h3>
+              <p>2020 – 2022</p></div>
+            <div class="card">
+             <h3>Secondary (10th)</h3> 
+             <p>2019 – 2020</p>
+             </div>
+</section>
+
+<section id="projects" class="fade">
+<h2 class="section-title">Projects</h2>
+<div class="grid">
+<div class="card">
+<h3>Portfolio Website</h3>
+<p>Responsive personal portfolio built using HTML, CSS and JavaScript.</p>
+</div>
+<div class="card">
+<h3>To-Do Web App</h3>
+<p>Task management app with local storage functionality.</p>
+</div>
+<div class="card">
+<h3>Weather App</h3>
+<p>Real-time weather app using API integration.</p>
+</div>
+</div>
+</section>
+<section id="contact" class="fade">
+<h2 class="section-title">Contact</h2>
+<p>Email: <a href="mailto:saikrishna.mittapelli123@gmail.com" style="color:#38bdf8;">saikrishna.mittapelli123@gmail.com</a></p>
+<p>LinkedIn: <a href="https://www.linkedin.com/in/saikrishna-mittapelli-036307288/" target="_blank" style="color:#38bdf8;">View Profile</a></p>
+<p>GitHub: <a href="https://github.com/saikrishna123-sru" target="_blank" style="color:#38bdf8;">View GitHub</a></p>
+ </section>            
+<footer>
+© 2026 M. Sai Krishna | All Rights Reserved
+</footer>
+
+<script>
+// Typing
+const texts=["Web Developer","Frontend Enthusiast","Problem Solver"];
+let count=0,index=0;
+(function type(){
+if(count===texts.length)count=0;
+let current=texts[count];
+let letter=current.slice(0,++index);
+document.getElementById("typing").textContent=letter;
+if(letter.length===current.length){count++;index=0;setTimeout(type,1000);}
+else{setTimeout(type,100);}
+})();
+
+// Scroll reveal
+const faders=document.querySelectorAll('.fade');
+const observer=new IntersectionObserver(entries=>{
+entries.forEach(entry=>{
+if(entry.isIntersecting){
+entry.target.classList.add('show');
+}
+});
+},{threshold:0.2});
+faders.forEach(el=>observer.observe(el));
+
+// Skill animation
+const skills=document.querySelectorAll('.progress div');
+const skillObserver=new IntersectionObserver(entries=>{
+entries.forEach(entry=>{
+if(entry.isIntersecting){
+entry.target.style.width=entry.target.getAttribute('data-width');
+}
+});
+});
+skills.forEach(skill=>skillObserver.observe(skill));
+</script>
+
+</body>
+</html>
+
+
+
+
+
+       
+
